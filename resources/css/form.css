@@ -1,0 +1,116 @@
+@import 'tailwindcss';
+
+@layer components{
+    //Form Styles
+    .form-group {
+        @apply mb-4;    
+    }
+
+    .form-control {
+        @apply w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent mb-1;
+    }
+
+    label {
+        @apply text-gray-700 text-sm font-bold my-2;
+    }
+}
+
+.custom-form-container {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5);
+    width: 450px;
+    text-align: center;
+    margin: 50px auto;
+}
+
+.custom-form-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 1.3rem;
+    color: #333;
+    margin-bottom: 0.4rem;
+}
+
+.custom-input-group {
+    position: relative;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.custom-input-group i {
+    position: absolute;
+    top: 20%;
+    left: 10px;
+    color: rgb(69, 120, 229);
+}
+
+.custom-input-group input {
+    width: 100%;
+    padding: 10px 10px 10px 35px;
+    font-size: 14px;
+    border-radius: 5px;
+    outline: transparent;
+    border: none;
+    border-bottom: 2px solid rgb(97, 139, 237);
+}
+
+.custom-input-group input:focus {
+    border-bottom: 2px solid rgb(98, 0, 255);
+    transition: border-bottom 0.3s ease;
+}
+
+.custom-input-group label {
+    display: block;
+    font-size: 12px;
+    margin-top: 5px;
+    color: rgb(102, 102, 102);
+}
+
+.custom-btn {
+    width: 100%;
+    padding: 10px;
+    background: blue;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.custom-btn:hover {
+    background: rgb(81, 0, 255);
+}
+
+.custom-links {
+    font-size: 14px;
+    color: rgb(51, 51, 51);
+}
+
+.custom-links p {
+    margin: 0;
+    display: inline;
+    margin: 0px 10px 10px 0px;
+}
+
+.custom-links a {
+    background: none;
+    border: none;
+    color: blue;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.custom-links a:hover {
+    color: rgb(120, 0, 157);
+    text-decoration: underline;
+}
+
+/* Media Query for Responsive Design */
+@media (max-width: 768px) {
+    .custom-form-container {
+        width: 90%;
+    }
+}

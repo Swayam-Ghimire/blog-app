@@ -1,0 +1,99 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source "../**/*.blade.php";
+@source "../**/*.js";
+@source "../**/*.vue";
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+/* Custom Styles */
+* {
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+@layer components {
+    body {
+        @apply bg-indigo-100 text-gray-900;
+    }
+    
+    #navbar {
+        @apply bg-gradient-to-r from-purple-700 via-blue-600 to-indigo-700 text-white shadow-md py-4 px-6 flex justify-between items-center;
+    }
+    
+    #navbar #logo h3 {
+        @apply text-2xl font-bold;
+    }
+    
+    #navbar ul {
+        @apply flex items-center space-x-6;
+    }
+    
+    #navbar .btn {
+        @apply text-white hover:bg-white hover:text-indigo-700 px-3 py-2 rounded-lg transition duration-300;
+    }
+
+    .user-avatar{
+        @apply w-8 h-8 object-cover rounded-full;
+    }
+    
+    .container {
+        @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8;
+    }
+    
+    .card {
+        @apply bg-white shadow-md rounded-lg overflow-hidden mb-6 w-full sm:w-5/6 md:w-3/4 lg:w-2/3 mx-auto;
+    }
+    
+    .card-header {
+        @apply px-6 py-4 flex justify-between items-center bg-indigo-200;
+    }
+    
+    .card-title {
+        @apply text-xl font-semibold text-gray-900;
+    }
+    
+    .card-user {
+        @apply text-sm text-gray-700;
+    }
+    
+    .card-date {
+        @apply text-sm text-gray-500;
+    }
+    
+    .card-edit {
+        @apply text-indigo-700 hover:text-indigo-900 transition duration-300;
+    }
+    
+    .card-body {
+        @apply px-6 py-4;
+    }
+    
+    .card-description {
+        @apply text-gray-800 text-sm;
+    }
+    
+    .card-readmore {
+        @apply text-indigo-700 hover:text-indigo-900 transition duration-300 mt-4 inline-block;
+    }
+    
+    .comment-form {
+        @apply mt-4 bg-indigo-50 p-4 rounded-lg;
+    }
+    
+    .comment-form textarea {
+        @apply w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-700 text-sm;
+    }
+    
+    .comment-form button {
+        @apply text-sm mt-2 px-4 py-2 bg-indigo-700 text-white rounded-lg hover:bg-indigo-900 transition duration-300;
+    }
+    
+    footer {
+        @apply bg-gradient-to-r from-purple-700 via-blue-600 to-indigo-700 shadow-md py-4 text-center mt-8;
+    }
+}
