@@ -54,7 +54,7 @@
         @auth
         <form action="{{ route('auth.logout') }}" method="POST">
             @csrf
-            <button type="submit" class="cursor-pointer bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300">Log out</button>
+            <button type="submit" class="sub">Log out</button>
         </form>
         @endauth
     </div>

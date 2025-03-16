@@ -25,7 +25,7 @@
             </div>
 
             <div class="custom-file-input">
-                <label for="picture" class="cursor-pointer bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-800 transition">
+                <label for="picture" class="picture">
                     <i class="fas fa-upload mr-2"></i> Upload Picture
                 </label>
                 <input type="file" id="picture" name="picture" class="hidden">
@@ -33,13 +33,7 @@
             </div>            
             <input type="submit" value="Register" class="custom-btn" name="SignUp">
         </form>
-        @if ($errors->any())
-            <ul class="px-4 py-2 bg-red-100">
-                @foreach ($errors->all() as $error)
-                    <li class="my-2 text-red-500">{{ $error }}</li>
-                @endforeach
-            </ul>
-        @endif
+        <x-error/>
         <div class="custom-links">
             <p>Already have an account?</p>
             <a href="{{ route('auth.login') }}">Login</a>

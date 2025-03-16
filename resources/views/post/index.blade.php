@@ -2,7 +2,7 @@
     <ul>
         @foreach ($posts as $post)
             <li>
-                <x-card :href="route('post.show', $post->id)" :post="$post" />
+                <x-card :post="$post" />
             </li>
         @endforeach
     </ul>
