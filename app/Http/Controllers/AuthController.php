@@ -24,7 +24,7 @@ class AuthController extends Controller
             'name' => 'required|string|min:5|max:255',
             'email' => 'required|email|unique:users',
             'password' => 'required|string|min:8|max:15|confirmed',
-            'picture' => 'nullable|file|mimes:png,jpg,jpeg|max:2048',
+            'picture' => 'nullable|file|mimes:png,jpg,jpeg|max:10240',
         ]);
         $path = null;
         if ($request->hasFile('picture')){

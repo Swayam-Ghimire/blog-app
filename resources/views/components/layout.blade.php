@@ -51,6 +51,7 @@
     <!-- Main Content -->
     <div class="container mx-auto p-4">
         {{ $slot }}
+        <br>
         @auth
         <form action="{{ route('auth.logout') }}" method="POST">
             @csrf
