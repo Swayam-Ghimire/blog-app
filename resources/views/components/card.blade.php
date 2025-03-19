@@ -24,7 +24,8 @@
                 <a href="{{ route('post.show', $post->id) }}" class="card-readmore">Read more</a>
             @endif
         </p>
-</div>
+        <x-options :post="$post" />
+    </div>
 
     <div class="comment-form">
         <form action="" method="POST">

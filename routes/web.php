@@ -12,7 +12,8 @@ Route::get('/', [PostController::class, 'home'])->name('home')->middleware('gues
 
 Route::middleware('auth')->group(function(){
     Route::resource('post', PostController::class);
-    Route::get('/profile/{user}', [UserController::class, 'profile'])->name('users.profile');
+    Route::get('/profile', [UserController::class, 'privateProfile'])->name('users.profile');
+    Route::get('/profile/{user}', [UserController::class, 'publicProfile'])->name('users.public-profile');
 });
 
 // Authentication routes

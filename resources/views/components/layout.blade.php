@@ -26,7 +26,7 @@
                 <li><a href="{{ route('post.create') }}" class="btn">Add Your Post</a></li>
                 @if(Auth::user()->img_path)
                     <li>
-                        <a href="">
+                        <a href="{{ route('users.profile') }}">
                             <img src="{{ asset('storage/' . Auth::user()->img_path) }}" class="user-avatar">
                         </a>
                     </li>
@@ -51,13 +51,6 @@
     <!-- Main Content -->
     <div class="container mx-auto p-4">
         {{ $slot }}
-        <br>
-        @auth
-        <form action="{{ route('auth.logout') }}" method="POST">
-            @csrf
-            <button type="submit" class="sub">Log out</button>
-        </form>
-        @endauth
     </div>
     <br>
     <!-- Footer -->
