@@ -2,7 +2,7 @@
     
     <div class="card-header">
         <h2 class="card-title">{{ $post->title }}</h2>
-        <p class="card-user">By {{ $post->user->name }}</p>
+        <a href="{{ $attributes->get('href') }}"><p class="card-user">By {{ $post->user->name }}</p></a>
         <p class="card-date">Posted on {{ $post->created_at->format('M d, Y') }}</p>
     </div>
 

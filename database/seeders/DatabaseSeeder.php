@@ -14,10 +14,10 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
 
-        User::factory()->count(10)->create();
-        $this->call([
-            PostSeeder::class,
-            CommentSeeder::class,
-        ]);
+        // User::factory()->count(10)->create();
+        // $this->call([
+        //     PostSeeder::class,
+        //     CommentSeeder::class,
+        // ]);
     }
 }

@@ -14,6 +14,8 @@ Route::middleware('auth')->group(function(){
     Route::resource('post', PostController::class);
     Route::get('/profile', [UserController::class, 'privateProfile'])->name('users.profile');
     Route::get('/profile/{user}', [UserController::class, 'publicProfile'])->name('users.public-profile');
+    Route::post('/profile/update-photo', [UserController::class, 'updateProfilePhoto'])->name('profile.update.photo');
+
 });
 
 // Authentication routes

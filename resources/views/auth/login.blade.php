@@ -23,7 +23,7 @@
             </ul>
         @endif
         <div class="custom-links">
-            <p>Already have an account?</p>
+            <p>Don't have an account yet?</p>
             <a href="{{ route('auth.register') }}">Register</a>
         </div>
     </div>

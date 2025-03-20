@@ -9,9 +9,18 @@
                      class="w-32 h-32 rounded-full mx-auto object-cover border-4 border-indigo-500 shadow-md">
             @else
                 <div class="w-32 h-32 rounded-full mx-auto bg-gray-200 flex items-center justify-center shadow-md">
-                    <i class="fas fa-user text-4xl text-gray-500"></i>
+                    <img src="https://ui-avatars.com/api/?name={{ urlencode(Auth::user()->name) }}&color=FFFFFF&background=6366F1" alt="Profile photo">
                 </div>
             @endif
+            <!-- Profile Picture Upload Form -->
+            <form action="{{ route('profile.update.photo') }}" method="POST" enctype="multipart/form-data" class="relative mt-4">
+                @csrf
+                <input type="file" name="profile_photo" id="profileUpload" class="hidden" accept="image/*" onchange="this.form.submit()">
+                
+                <label for="profileUpload" class="absolute bottom-0 right-90 text-black z-10 p-2 rounded-full shadow-md cursor-pointer">
+                    <i class="fas fa-camera"></i>
+                </label>
+            </form>
 
             <!-- User Name -->
             <h2 class="text-2xl font-bold text-gray-800 mt-4">{{ $user->name }}</h2>
@@ -19,7 +28,7 @@
         </div>
 
         <!-- Posts List -->
-        @if($posts) 
+        @if(!(empty($posts))) 
             <div class="mt-8">
                 <h3 class="text-xl font-semibold text-gray-700 mb-4 border-b pb-2">Your Posts</h3>
 
