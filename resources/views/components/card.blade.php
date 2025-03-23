@@ -26,12 +26,7 @@
         </p>
         <x-options :post="$post" />
     </div>
-
-    <div class="comment-form">
-        <form action="" method="POST">
-            @csrf
-            <textarea name="comment" rows="3" placeholder="Add a comment..."></textarea>
-            <button type="submit" class="cursor-pointer">Submit</button>
-        </form>
+    <div class="card-footer">
+        <x-comment :post="$post"/>
     </div>
 </div>

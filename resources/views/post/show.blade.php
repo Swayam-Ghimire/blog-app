@@ -33,6 +33,9 @@
         </div>
 
         <!-- Post Actions -->
+        <div class="card-footer">
+            <x-comment :post="$post"/>
+        </div>
        <x-options :post="$post"/>
     </div>
 </x-layout>

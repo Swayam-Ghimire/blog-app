@@ -19,7 +19,7 @@
         </div>
 
         <!-- Posts List -->
-        @if(!(empty($posts))) 
+        @if(!($posts->isEmpty())) 
             <div class="mt-8">
                 <h3 class="text-xl font-semibold text-gray-700 mb-4 border-b pb-2">{{ $user->name }} Posts</h3>
 

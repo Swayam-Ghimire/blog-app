@@ -7,7 +7,7 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 // Welcome Page
-Route::get('/', [PostController::class, 'home'])->name('home')->middleware('guest');
+Route::get('/', [PostController::class, 'home'])->name('home');
 
 
 Route::middleware('auth')->group(function(){
@@ -15,7 +15,7 @@ Route::middleware('auth')->group(function(){
     Route::get('/profile', [UserController::class, 'privateProfile'])->name('users.profile');
     Route::get('/profile/{user}', [UserController::class, 'publicProfile'])->name('users.public-profile');
     Route::post('/profile/update-photo', [UserController::class, 'updateProfilePhoto'])->name('profile.update.photo');
-
+    Route::post('/comments/{post}', [CommentController::class, 'store'])->name('comments.store');
 });
 
 // Authentication routes

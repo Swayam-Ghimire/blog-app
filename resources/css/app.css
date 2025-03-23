@@ -38,7 +38,7 @@
     }
 
     .user-avatar{
-        @apply w-8 h-8 object-cover rounded-full;
+        @apply w-10 h-10 object-cover rounded-full overflow-hidden;
     }
     
     .container {
@@ -88,7 +88,19 @@
     .comment-form textarea {
         @apply w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-700 text-sm;
     }
+
+    .card-footer {
+        @apply flex flex-col p-4 border-t border-gray-200 bg-gray-50 rounded-b-lg;
+    }
     
+    .card-footer button {
+        @apply flex items-center space-x-1 text-gray-600 hover:text-indigo-600 transition;
+    }
+    
+    .card-footer i {
+        @apply cursor-pointer;
+    }
+
     .comment-form button {
         @apply text-sm mt-2 px-4 py-2 bg-indigo-700 text-white rounded-lg hover:bg-indigo-900 transition duration-300;
     }

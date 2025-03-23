@@ -16,13 +16,13 @@ class PostController extends Controller
         $latestTime = Carbon::now()->subDays(7);
         $posts = Post::where('created_at', '>=', $latestTime)->with('user')->orderBy('created_at', 'desc')->paginate(5);
         $title = "Latest Post";
-        return view('home', compact('posts', 'title'));
+       return view('home', compact('posts', 'title'));
     }
 
     public function index(){
         // route -> /post
         $posts = Post::latest()->orderBy('created_at', 'desc')->paginate(10);
-        return view('post.index', ['posts'=>$posts]);
+        return view('post.index', compact('posts'));
 
     }
 
