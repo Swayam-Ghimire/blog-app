@@ -42,9 +42,9 @@ cp .env.example .env
 ```sh 
 php artisan key:generate
 ```
-7. **Run migration files and seed the table:**
+7. **Run migration files:**
 ```sh
-php artisan migrate --seed
+php artisan migrate
 ```
 8. **Run the application:**
 ```sh
