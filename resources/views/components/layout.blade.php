@@ -55,7 +55,62 @@
     <br>
     <!-- Footer -->
     <footer>
-        <p class="text-white-800">&copy; {{ date('Y') }} The Blogging App. All rights reserved.</p>
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+                <!-- Brand & Description -->
+                <div>
+                    <h2 class="text-2xl font-bold">The Blogging App</h2>
+                    <p class="text-gray-200 text-sm mt-2">
+                        Share your thoughts with the world.
+                    </p>
+                </div>
+    
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold">Quick Links</h3>
+                    <ul class="mt-2 space-y-2">
+                        <li><a href="{{ route('home') }}" class="links">Home</a></li>
+                        <li><a href="{{ route('post.index') }}" class="links">All Posts</a></li>
+                        <li><a href="{{ route('post.create') }}" class="links">Write a Post</a></li>
+                        <li><a href="{{ route('auth.login') }}" class="links">Login</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Contact & Social Links -->
+                <div>
+                    <h3 class="text-lg font-semibold">Contact</h3>
+                    <p class=icons">
+                        <i class="fas fa-phone-alt mr-2"></i>
+                        <span class="text-sm">
+                            +977 9862331144
+                        </span>
+                    </p>
+                    <a href="mailto:swayamghi.dev@gmail.com" class="icons hover:text-gray-300 transition duration-300">
+                        <i class="fas fa-envelope mr-2"></i> swayamghi.dev@gmail.com
+                    </a>
+    
+                    <!-- Social Icons -->
+                    <div class="flex justify-center md:justify-start space-x-5 mt-4">
+                        <a href="https://x.com/SwayamGhimire" target="_blank" class="social-links">
+                            <i class="fab fa-x text-lg"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/swayam-ghimire-689076266/" target="_blank" class="social-links">
+                            <i class="fab fa-linkedin-in text-lg"></i>
+                        </a>
+                        <a href="https://github.com/Swayam-Ghimire" target="_blank" class="social-links">
+                            <i class="fab fa-github text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Copyright -->
+            <div class="border-t border-gray-400 mt-6 mb-0 pt-4 text-center text-sm text-gray-300">
+                &copy; {{ date('Y') }} The Blogging App. All rights reserved.
+            </div>
+        </div>
     </footer>
+    
+    
 </body>
 </html>

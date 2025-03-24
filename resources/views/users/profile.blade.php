@@ -15,7 +15,7 @@
             <!-- Profile Picture Upload Form -->
             <form action="{{ route('profile.update.photo') }}" method="POST" enctype="multipart/form-data" class="relative mt-4">
                 @csrf
-                <input type="file" name="profile_photo" id="profileUpload" class="hidden" accept="image/*" onchange="this.form.submit()">
+                <input type="file" name="picture" id="profileUpload" class="hidden" onchange="this.form.submit()">
                 
                 <label for="profileUpload" class="absolute bottom-0 right-90 text-black z-10 p-2 rounded-full shadow-md cursor-pointer">
                     <i class="fas fa-camera"></i>

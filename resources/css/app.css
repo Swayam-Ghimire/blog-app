@@ -94,20 +94,29 @@
     }
     
     .card-footer button {
-        @apply flex items-center space-x-1 text-gray-600 hover:text-indigo-600 transition;
-    }
-    
-    .card-footer i {
-        @apply cursor-pointer;
+        @apply cursor-pointer flex items-center space-x-1 text-gray-600 hover:text-indigo-600 transition;
     }
 
     .comment-form button {
-        @apply text-sm mt-2 px-4 py-2 bg-indigo-700 text-white rounded-lg hover:bg-indigo-900 transition duration-300;
+        @apply cursor-pointer text-sm px-3 py-1 bg-indigo-600 text-white rounded-lg hover:bg-indigo-800 hover:text-white transition;
     }
     
     footer {
-        @apply bg-gradient-to-r from-purple-700 via-blue-600 to-indigo-700 shadow-md py-4 text-center mt-8;
+        @apply bg-gradient-to-r from-purple-700 via-blue-600 to-indigo-700 shadow-md text-white pt-8 mt-10 pb-0;
     }
+
+    footer .links{
+        @apply hover:text-gray-300 text-sm;
+    }
+
+    footer .icons{
+        @apply mt-2 flex items-center justify-center md:justify-start text-sm;
+    }
+
+    footer .social-links{
+        @apply hover:text-gray-300 transition;
+    }
+
     .sub {
         @apply cursor-pointer bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300;
     }

@@ -12,10 +12,15 @@ Route::get('/', [PostController::class, 'home'])->name('home');
 
 Route::middleware('auth')->group(function(){
     Route::resource('post', PostController::class);
+    Route::post('/comments/{post}', [CommentController::class, 'store'])->name('comments.store');
+    Route::delete('/comments/{comment}', [CommentController::class, 'destroy'])->name('comments.destroy');
+});
+
+// User Controller routes
+Route::middleware('auth')->controller(UserController::class)->group(function(){
     Route::get('/profile', [UserController::class, 'privateProfile'])->name('users.profile');
     Route::get('/profile/{user}', [UserController::class, 'publicProfile'])->name('users.public-profile');
     Route::post('/profile/update-photo', [UserController::class, 'updateProfilePhoto'])->name('profile.update.photo');
-    Route::post('/comments/{post}', [CommentController::class, 'store'])->name('comments.store');
 });
 
 // Authentication routes

@@ -7,10 +7,11 @@ use Carbon\Carbon;
 use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
-use App\Models\User;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class PostController extends Controller
 {
+    use AuthorizesRequests;
     public function home(){
         // route-> /home
         $latestTime = Carbon::now()->subDays(7);
@@ -57,6 +58,8 @@ class PostController extends Controller
 
     public function edit(Post $post){
         // route /post/{id}/edit
+        // check if user is authorized to edit the post
+        $this->authorize('view', $post);
         return view('post.edit', compact('post'));
         
     }

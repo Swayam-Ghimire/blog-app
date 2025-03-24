@@ -25,10 +25,23 @@
                     </div>
 
                     <!-- Comment Content -->
-                    <div class="bg-gray-50 p-3 rounded-lg w-full">
-                        <p class="font-semibold text-gray-800">{{ $comment->user->name }}</p>
-                        <p class="text-gray-700 text-sm">{{ $comment->body }}</p>
-                        <p class="text-xs text-gray-500 mt-1">{{ $comment->created_at->diffForHumans() }}</p>
+                    <div class="flex justify-between w-full bg-gray-50">
+                        <div class="p-3 rounded-lg w-full">
+                            <p class="font-semibold text-gray-800">{{ $comment->user->name }}</p>
+                            <p class="text-gray-700 text-sm">{{ $comment->body }}</p>
+                            <p class="text-xs text-gray-500 mt-1">{{ $comment->created_at->diffForHumans() }}</p>
+                        </div>
+                        @can('view', $comment)
+                            <div class="p-3">
+                                <form action="{{ route('comments.destroy', $comment->id) }}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="bg-inherit">
+                                        <i class="fas fa-trash text-red-500 hover:text-red-700 cursor-pointer"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        @endcan
                     </div>
                 </div>
             @endforeach
@@ -44,7 +57,7 @@
             @csrf
             <div class="flex items-center space-x-3">
                 <textarea name="comment" rows="2" class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-700 text-sm" placeholder="Write a comment..."></textarea>
-                <button type="submit" class="text-sm px-3 py-1 bg-indigo-600 text-white rounded-lg hover:bg-indigo-800 transition">Post</button>
+                <button type="submit">Post</button>
             </div>
         </form>
     </div>
