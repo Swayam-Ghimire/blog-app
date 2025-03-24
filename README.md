@@ -17,7 +17,7 @@ A feature-rich Laravel-based blogging platform that allows users to create, mana
 
 1. **Clone the repository**  
 ```sh
-git clone https://github.com/your-repo/blog-app.git
+git clone https://github.com/Swayam-Ghimire/blog-app.git
 ```
 
 2. **Navigate to the project directory:**
