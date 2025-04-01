@@ -15,8 +15,7 @@
 
             <!-- User Name -->
             <h2 class="text-2xl font-bold text-gray-800 mt-4">{{ $user->name }}</h2>
-            <p class="text-gray-600 text-sm">{{ $user->email }}</p>
-        </div>
+            </div>
 
         <!-- Posts List -->
         @if(!($posts->isEmpty())) 

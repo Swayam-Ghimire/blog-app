@@ -32,7 +32,7 @@
                     </li>
                     @else
                         <li>
-                            <a href="" class="user-avatar">
+                            <a href="{{ route('users.profile') }}" class="user-avatar">
                                 <img src="https://ui-avatars.com/api/?name={{ urlencode(Auth::user()->name) }}&color=FFFFFF&background=6366F1" alt="Profile photo" class="user-avatar">
                             </a>
                         </li>

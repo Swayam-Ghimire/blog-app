@@ -27,7 +27,7 @@ class UserController extends Controller
 
     // Store new image
     if ($request->hasFile('picture')) {
-        if ($request->picture){
+        if ($request->picture && $user->img_path){
             Storage::disk('public')->delete($user->img_path);
         }
         $path = $request->file('picture')->store('users_image', 'public');
